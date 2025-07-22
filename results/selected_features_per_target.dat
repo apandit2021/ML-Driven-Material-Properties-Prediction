@@ -1,0 +1,45 @@
+# Target : Correlated_Features (|r|>0.5) | RFECV_Selected_Features Used in Model
+Lat_Const :
+  Corr : Pressure(-0.553)  Vol(+0.990)  Bond_Len(+1.000)  RWIGS(+0.622)  E_fermi(-0.810)  C11(-0.503)  C12(-0.732)  C44(-0.630)  Bulk_Modulus(-0.796)  Val_e_s(+0.619)  Val_e_d(-0.643)  Avg_At_Num(-0.632)  Inv_Vol(-0.964)
+  Used : Pressure  Vol  Bond_Len  RWIGS  E_fermi  C11  C12  C44  Bulk_Modulus  Val_e_s  Val_e_d  Avg_At_Num  Inv_Vol
+
+Bulk_Modulus :
+  Corr : Pressure(+0.648)  Lat_Const(-0.796)  Vol(-0.721)  Bond_Len(-0.796)  RWIGS(-0.614)  E_fermi(+0.835)  C11(+0.638)  C12(+0.916)  C44(+0.872)  Young(+0.704)  Shear(+0.697)  Val_e_s(-0.691)  Val_e_d(+0.688)  Avg_At_Num(+0.685)  Inv_Vol(+0.909)
+  Used : Pressure  Lat_Const  Vol  Bond_Len  RWIGS  E_fermi  C11  C12  C44  Young  Shear  Val_e_s  Val_e_d  Avg_At_Num  Inv_Vol
+
+Young :
+  Corr : RWIGS(-0.533)  Energy(-0.548)  E_fermi(+0.682)  C11(+0.894)  C44(+0.631)  Bulk_Modulus(+0.704)  Shear(+1.000)  Poisson(-0.540)  Val_e_tot(+0.513)  Val_e_s(-0.554)  DelRho_Tetra(+0.535)  Inv_Vol(+0.561)  Pressure(+0.366)
+  Used : RWIGS  Energy  E_fermi  C11  C44  Bulk_Modulus  Shear  Poisson  Val_e_tot  Val_e_s  DelRho_Tetra  Inv_Vol  Pressure
+
+Shear :
+  Corr : RWIGS(-0.528)  Energy(-0.546)  E_fermi(+0.677)  C11(+0.896)  C44(+0.622)  Bulk_Modulus(+0.697)  Young(+1.000)  Poisson(-0.541)  Val_e_tot(+0.509)  Val_e_s(-0.548)  DelRho_Tetra(+0.536)  Inv_Vol(+0.555)  Pressure(+0.365)
+  Used : RWIGS  Energy  E_fermi  C11  C44  Bulk_Modulus  Young  Poisson  Val_e_tot  Val_e_s  DelRho_Tetra  Inv_Vol  Pressure
+
+Poisson :
+  Corr : Young(-0.540)  Shear(-0.541)  DelRho_AvgAtom(+0.539)  Pressure(+0.158)
+  Used : Young  Shear  DelRho_AvgAtom  Pressure
+
+Enthalpy :
+  Corr : Pressure(+0.704)  RWIGS(+0.688)  Energy(+0.865)  Val_e_s(+0.587)  Val_e_d(-0.577)  DelRho_Tetra(-0.741)  Tetra_ELF(-0.576)  Avg_At_Num(-0.562)
+  Used : Pressure  RWIGS  Energy  Val_e_s  Val_e_d  DelRho_Tetra  Tetra_ELF  Avg_At_Num
+
+Octa_ELF :
+  Corr : Tetra_ELF(+0.864)  Pressure(-0.448)
+  Used : Tetra_ELF  Pressure
+
+Tetra_ELF :
+  Corr : Energy(-0.556)  Enthalpy(-0.576)  DelRho_Tetra(+0.629)  Octa_ELF(+0.864)  Pressure(-0.366)
+  Used : Energy  Enthalpy  DelRho_Tetra  Octa_ELF  Pressure
+
+DelRho_AvgAtom :
+  Corr : Poisson(+0.539)  Pressure(+0.060)
+  Used : Poisson  Pressure
+
+DelRho_Tetra :
+  Corr : RWIGS(-0.731)  Energy(-0.896)  Enthalpy(-0.741)  C11(+0.543)  Young(+0.535)  Shear(+0.536)  Val_e_tot(+0.628)  Val_e_s(-0.628)  DelRho_Octa(+0.686)  Tetra_ELF(+0.629)  Pressure(-0.186)
+  Used : RWIGS  Energy  Enthalpy  C11  Young  Shear  Val_e_tot  Val_e_s  DelRho_Octa  Tetra_ELF  Pressure
+
+DelRho_Octa :
+  Corr : DelRho_Tetra(+0.686)  Pressure(-0.317)
+  Used : DelRho_Tetra  Pressure
+
